@@ -15,7 +15,7 @@ app.get('/distance', (req, res) => {
     // verify whether user input is correct or not
     const { lat, long } = req.body;
     if (!lat || !long) {
-        res.status(400).send('Latitude and longitude need to be specified');
+        res.status(400).send('Latitude and longitude need to be specified', req.body);
         return;
     }
     if (typeof lat !== 'number' || typeof long !== 'number') {
